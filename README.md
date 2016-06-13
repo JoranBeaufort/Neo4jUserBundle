@@ -10,7 +10,9 @@ I have also used the MaterialDesignBootstrap framework in my TWIG files: http://
 2. Create a 'Role' node with the property 'roleType' = 'ROLE_USER' in the Neo4j Graph
 ``` CREATE (r:Role{roleType:'ROLE_USER'}) ```
 3. Change the connection information in the graph manager /Manager/GraphManager.php
-4. Change the twig template files to suite your installation! These are found under /Resources/views
+4. In the Symfony Parameters file `app/config/parameters.yml` provide a path for the user directory (for storing the profile image): `user_directory: '%kernel.root_dir%/../web/users'`
+5. In your web directory, create a folder named "defaults" and add a default user image with the name "user.png"
+6. Change the twig template files to suite your installation! These are found under /Resources/views
 
 ### Disclaimer
 I am fairly new to Symfony and I expect the code to be mediocre at best. Improvements are welcome :)
