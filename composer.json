@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "joranbeaufort\\neo4juserbundle\\": "src/"
+            "JoranBeaufort\\Neo4jUserBundle\\": "src/"
         }
     },
     "require-dev": {
