@@ -1,0 +1,44 @@
+{% extends "Neo4jUserBundle:Registration:register.html.twig" %}
+{% block title %}Registration{% endblock %} 
+{% block neo4j_user_content %}
+        <!--Mask-->
+        <div class="container"> 
+            <div class="row">
+                <div class="col-xs-12" style="color:#fff" >                            
+                    <h3>Register</h3>
+                    <br>
+                    {% form_theme form 'bootstrap_3_layout.html.twig' %}        
+                    {{ form_start(form, {'method': 'post', 'action': path('neo4j_register')}) }}
+                    <div class="md-form">
+                        <i class="fa fa-envelope prefix"></i>
+                        {{ form_widget(form.email, { 'attr': {'class': "form-control validate"} }) }}
+                        <label for="user_email" data-error="wrong" data-success="">Email Address</label>
+                    </div>
+                    <div class="md-form">
+                        <i class="fa fa-user prefix"></i>
+                        {{ form_widget(form.username, { 'attr': {'class': "form-control"} }) }}
+                        <label for="user_username">Choose a Username</label>
+                    </div>
+                    
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix"></i>
+                        {{ form_widget(form.plainPassword.first, { 'attr': {'class': "form-control "} }) }}
+                        <label for="user_plainPassword_first" >Choose a Password</label>
+                    </div>
+                    
+                    <div class="md-form">
+                        <i class="fa fa-unlock-alt prefix"></i>
+                        {{ form_widget(form.plainPassword.second, { 'attr': {'class': "form-control "} }) }}
+                        <label for="user_plainPassword_second" >Repeat your Password</label>
+                    </div>
+
+                    <br/>
+                        <div>
+                            <input class="btn btn-info-outline waves-effect btn-block" type="submit" value="Register" />
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+</div>
+{% endblock neo4j_user_content %}
+

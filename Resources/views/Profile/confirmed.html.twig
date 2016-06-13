@@ -1,0 +1,17 @@
+{% extends "Neo4jUserBundle::layout.html.twig" %}
+
+{% block neo4j_user_content %}
+          <div class="row">
+              <div class="col-md-12" style="text-align:center">
+                {% if error==true %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+                {% elseif error==false %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>                
+               {% endif %}                    
+            </div>
+          </div> 
+{% endblock neo4j_user_content %}

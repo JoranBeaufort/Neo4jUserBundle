@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+    {% block content %}
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="flash-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+
+            {% block neo4j_user_content %}
+            {% endblock neo4j_user_content %}
+
+{% endblock content %}

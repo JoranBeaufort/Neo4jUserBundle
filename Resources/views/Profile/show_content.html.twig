@@ -1,0 +1,70 @@
+<div class="container">
+    <!--Card-->
+    <div class="card">
+        <div class="row">  
+        <!--Card image-->
+            <div class="col-md-3">
+                {% if user.profileImage is null %}
+                <img style="padding:10px; height:180px; width: 180px;" src="{{ asset('/defaults/user.png') }}">    
+                {% else %}
+                <img style="padding:10px; height:180px; width: 180px;" src="{{ asset('/users/'~user.uid~'/'~user.profileImage) }}"> 
+                {% endif %}
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") and user.getUsername() == app.user.username %}
+                <a href="{{ path('neo4j_profile_edit', {'slug': app.user.username}) }}" class="btn btn-primary">Edit&nbsp;&nbsp;<i class="fa fa-cog"></i></a>
+                {% endif %}  
+            </div>
+        <!--/.Card image-->
+
+            <!--Card content-->
+            <div class="col-md-9">
+                <div class="card-block">
+                    <!--Title-->
+                    <h4 class="card-title">{{ user.getUserName() }}</h4>
+                    <!--Text-->
+                        {% if user.getProfileDescription() != '' %}
+                        <p class="text-justify"> {{ user.getProfileDescription() }}</p>
+                        {% endif %}
+                     
+                </div>
+                <!--/.Card content-->
+            </div>
+        </div>
+        <hr>
+        <div class="row" style="padding-top:20px;padding-bottom:20px">
+            <div class="card-block">
+                <div class="col-md-12" style="padding-bottom:20px">
+                FURTHER INFORMATION & STATS
+                </div>
+                <div class="col-md-4">
+                    <!--Card Success-->
+                    <div class="card card-success text-xs-center z-depth-2">
+                        <div class="card-block">
+                            <p class="white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        </div>
+                    </div>
+                    <!--/.Card Success-->
+                </div>
+                <div class="col-md-4">
+                        <!--Card Success-->
+                    <div class="card card-warning  text-xs-center z-depth-2">
+                        <div class="card-block">
+                            <p class="white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        </div>
+                    </div>
+                    <!--/.Card Success-->
+                </div>
+                <div class="col-md-4">
+                        <!--Card Success-->
+                    <div class="card default-color text-xs-center z-depth-2">
+                        <div class="card-block">
+                            <p class="white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        </div>
+                    </div>
+                    <!--/.Card Success-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.Card-->
+

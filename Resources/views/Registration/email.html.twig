@@ -1,0 +1,10 @@
+<h3>Hello {{ username }}!</h3>
+
+Please confirm your email by clicking on following link:
+ 
+ <a href="{{ url('neo4j_register_confirm_email',{ 'token': confirmationToken }) }}">{{ url('neo4j_register_confirm_email',{ 'token': confirmationToken }) }}</a><br>
+
+Thank you!
+ <br>
+ 
+

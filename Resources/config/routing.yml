@@ -1,0 +1,50 @@
+# app/config/routing.yml
+neo4j_register:
+    path:     /register
+    defaults: { _controller: Neo4jUserBundle:Registration:register }
+
+# app/config/routing.yml
+neo4j_register_check_email:
+    path:     /checkmail
+    defaults: { _controller: Neo4jUserBundle:Registration:checkEmail }
+
+# app/config/routing.yml
+neo4j_register_confirm_email:
+    path:     /confirm/{token}
+    defaults: { _controller: Neo4jUserBundle:Registration:confirmed }
+    
+
+
+neo4j_login:
+    path:     /login
+    defaults: { _controller: Neo4jUserBundle:Security:login }
+    
+neo4j_password_reset:
+    path:     /passwordreset
+    defaults: { _controller: Neo4jUserBundle:Security:passwordReset }
+
+neo4j_login_check:
+    path: /login_check
+    # no controller is bound to this route
+    # as it's handled by the Security system
+    
+neo4j_logout:    
+    path: /logout
+    # no controller is bound to this route
+    # as it's handled by the Security system
+    
+neo4j_profile:
+    path: /user/{slug}
+    defaults: { _controller: Neo4jUserBundle:User:profile }
+    
+neo4j_profile_edit:
+    path: /edit/{slug}
+    defaults: { _controller: Neo4jUserBundle:User:profileEdit }
+
+neo4j_profile_update_email:
+    path:     /updateemail/{token}
+    defaults: { _controller: Neo4jUserBundle:User:confirmUpdatedEmail }
+    
+    
+    
+    

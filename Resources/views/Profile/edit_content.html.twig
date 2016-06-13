@@ -1,0 +1,84 @@
+{% if error is null %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{{ form_start(form, {'method': 'post', 'action': path('neo4j_profile_edit', {'slug': slug}), 'required':false}) }}
+<div class="container">
+    <!--Card-->
+    <div class="card">
+        {% elseif error is not null %}
+        <div class="row">
+          <div class="col-md-12" style="text-align:center">
+            <div class="alert alert-danger" role="alert">{{ error }}</div>
+          </div>
+        </div>
+        {% endif %}        
+        <div class="row">
+        <!--Card image-->
+            <div class="col-md-3">
+                {% if user.profileImage is null %}
+                <img style="padding:10px; height:180px; width: 180px;" src="{{ asset('/defaults/user.png') }}">    
+                {% else %}
+                <img style="padding:10px; height:180px; width: 180px;" src="{{ asset('/users/'~user.uid~'/'~user.profileImage) }}"> 
+                {% endif %}
+                <div class="md-form" style="padding:10px;">
+                    {{ form_widget(form.profileImageFile, { 'attr': {'class': "form-control"} }) }}
+                    <label for="user_edit_profileImageFile"></label>
+                    <div style="color:red">
+                    {{ form_errors(form.profileImageFile) }}
+                    </div>                
+                </div>
+            </div>
+            <!--Card content-->
+            <div class="col-md-9">
+                <div class="card-block">            
+                    <h4>User Information</h4>
+                    <br>
+                    <div class="md-form">
+                        {{ form_widget(form.email, { 'attr': {'class': "form-control validate"} }) }}
+                        <label for="user_edit_email" data-error="">Change email</label>
+                        <div style="color:red">
+                        {{ form_errors(form.email) }}
+                        </div>
+                    </div>
+                    <div class="md-form">
+                        {{ form_widget(form.plainPassword.first, { 'attr': {'class': "form-control validate"} }) }}
+                        <label for="user_edit_plainPassword_first" data-error="">New password</label>
+                        <div style="color:red">
+                        {{ form_errors(form.plainPassword.first) }}
+                        </div>
+                    </div>
+                    <div class="md-form">
+                        {{ form_widget(form.plainPassword.second, { 'attr': {'class': "form-control validate"} }) }}
+                        <label for="user_edit_plainPassword_second" data-error="">Repeat new password</label>
+                        <div style="color:red">
+                        {{ form_errors(form.plainPassword.second) }}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="md-form">
+                        {{ form_widget(form.profileDescription, { 'attr': {'class': "form-control validate"} }) }}
+                        <label for="user_edit_email" data-error="">Update your description</label>
+                        <div style="color:red">
+                        {{ form_errors(form.profileDescription) }}
+                        </div>
+                    </div>
+                    <div class="md-form">
+                        {{ form_widget(form.current_password, { 'attr': {'class': "form-control validate"} }) }}
+                        <label for="user_edit_current_password" data-error="">Current Password</label>
+                        <div style="color:red">
+                        {{ form_errors(form.current_password) }}
+                        </div>
+                        <p>* Current password required to save changes</p>
+                    </div>
+                    <input class="btn btn-info-outline waves-effect btn-block" type="submit" value="Save Changes" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{{ form_end(form) }}
+
+
+        
+
+

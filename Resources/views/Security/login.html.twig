@@ -1,0 +1,32 @@
+{% extends "Neo4jUserBundle::layout.html.twig" %}
+
+{% block neo4j_user_content %}
+        <!--Mask-->
+            <div class="flex-center" >
+            <div class="col-md-4">
+                {% if error %}
+                    <div style="color:#A94442">{{ error.message }}</div>
+                {% endif %}
+                
+                <form action="{{ path('neo4j_login_check') }}" method="post">
+                <h2 class="form-signin-heading">Login:</h2>
+                <br>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                    <div class="md-form">
+                        <input class="form-control validate" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                        <label for="username" data-error="" data-success="">Username or Email</label>
+                    </div>
+                    <div class="md-form">
+                        <input class="form-control  validate" type="password" id="password" name="_password" required="required" />
+                        <label for="password" data-error="" data-success="">Password</label>
+                    </div>
+                    <!-- <input type="checkbox" id="remember_me" name="_remember_me"/>
+                    <label for="remember_me">Remember me</label><br> -->
+                    <label><a class="nav-link" style="color: #fff;" href="{{ path('neo4j_password_reset') }}">Forgot Password</a></label>
+                    <br>
+                    <input class="btn btn-info-outline waves-effect btn-block" type="submit" id="_submit" name="_submit" value="Login" />
+                </form>
+            </div>
+        </div>
+    <!--/.Mask-->
+{% endblock neo4j_user_content %}

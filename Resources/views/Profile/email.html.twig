@@ -1,0 +1,8 @@
+<h3>Hello {{ username }}</h3>
+
+
+You have updated your email. To complete the email update, please click on the following link. <br><br>
+ <a href="{{ url('neo4j_profile_update_email',{ 'token': confirmationToken }) }}">{{ url('neo4j_profile_update_email',{ 'token': confirmationToken }) }}</a><br>
+ <br>
+ Thank you!
+

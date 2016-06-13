@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block css %}
+{{ parent() }} 
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+{% endblock css %}
+{% block content %}
+    <div id="map" style="height:600px"></div>
+{% endblock %}
+{% block javascript %}
+{{ parent() }} 
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="{{ asset('user/'~userid~'/map/'~mapid~'/'~mapid~'.js')}}"></script>
+
+    
+
+{% endblock javascript %}   
