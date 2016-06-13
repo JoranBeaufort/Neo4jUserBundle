@@ -52,7 +52,7 @@ class UserController extends Controller
                 if($profileImage){
                     $profileImageName = md5(uniqid()).'.'.$profileImage->guessExtension();
                     $profileImage->move(
-                        $this->container->getParameter('neo4j_user.directory').'/'.$user->getUid(),
+                        $this->getParameter('neo4j_user.directory').'/'.$user->getUid(),
                         $profileImageName
                     );
                     
