@@ -86,8 +86,8 @@ class RegistrationController extends Controller
                 
                 /* --------__ Send Email with Token __----------- */
                  $message = \Swift_Message::newInstance()
-                    ->setSubject('Willkommen bei STARBorn!')
-                    ->setFrom('starborn@geonet.ch')
+                    ->setSubject( $this->getParameter('neo4j_user.mail.subject.registration'))
+                    ->setFrom($this->getParameter('mailer_user'))
                     ->setTo($user->getEmail())
                     ->setBody(
                         $this->renderView(
@@ -130,7 +130,7 @@ class RegistrationController extends Controller
             $fs = new Filesystem();
 
             try {
-                $fs->mkdir($this->container->getParameter('user_directory').'/'.$uid);
+                $fs->mkdir($this->getParameter('neo4j_user.directory').'/'.$uid); 
             } catch (IOExceptionInterface $e) {
                 $error = true;
                 $message = "An error occurred while creating your directory at ".$e->getPath();

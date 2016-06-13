@@ -72,8 +72,8 @@ class UserController extends Controller
                     $tokenGenerator=$this->get('neo4j.token_generator');
                     $confirmationToken=$tokenGenerator->generateConfirmationToken(24);
                     $message = \Swift_Message::newInstance()
-                    ->setSubject('Welcome to GISBlocks!')
-                    ->setFrom('starborn@geonet.ch')
+                    ->setSubject($this->getParameter('neo4j_user.mail.subject.emailedit'))
+                    ->setFrom($this->getParameter('mailer_user'))
                     ->setTo($user->getEmail())
                     ->setBody(
                         $this->renderView(
