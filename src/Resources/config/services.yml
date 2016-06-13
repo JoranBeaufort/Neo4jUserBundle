@@ -1,13 +1,13 @@
 parameters:
-    neo4j.graph_manager.class: Neo4jUserBundle\Manager\GraphManager
-    neo4j.token_generator.class: Neo4jUserBundle\Security\Token\TokenGenerator
+    neo4j.graph_manager.class: JoranBeaufort\Neo4jUserBundle\Manager\GraphManager
+    neo4j.token_generator.class: JoranBeaufort\Neo4jUserBundle\Security\Token\TokenGenerator
 
         
 services:
     neo4j.graph_manager:
         class: %neo4j.graph_manager.class%
     neo4j.user_provider:
-        class: Neo4jUserBundle\Security\User\UserProvider
+        class: JoranBeaufort\Neo4jUserBundle\Security\User\UserProvider
         arguments: ['@neo4j.graph_manager']
     neo4j.token_generator:
          class: %neo4j.token_generator.class%
