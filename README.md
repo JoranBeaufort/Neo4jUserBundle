@@ -103,3 +103,6 @@ neo4j_profile_update_email:
 ### Disclaimer
 I am fairly new to Symfony and I expect the code to be mediocre at best. Improvements are welcome :)
 
+### ToDo
+Translation file
+
