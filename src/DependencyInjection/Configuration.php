@@ -19,6 +19,25 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('neo4j_user');
+        
+        $rootNode
+            ->children()
+                ->children()
+                    ->scalarNode('username')
+                        ->defaultValue('')
+                    ->end()
+                    ->scalarNode('password')
+                        ->defaultValue('')
+                    ->end()
+                    ->scalarNode('url')
+                        ->defaultValue('localhost')
+                    ->end()
+                    ->integerNode('port')
+                        ->defaultValue(7474)
+                    ->end()
+                ->end()
+            ->end()
+        ;
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

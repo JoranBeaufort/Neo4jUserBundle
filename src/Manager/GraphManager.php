@@ -23,7 +23,13 @@ class GraphManager
     
     public function getClient()
     {
-        $client = EntityManager::create('http://'.$this->user.':'.$this->pass.'@'.$this->url.':'.$this->port);
+        if($this->user=='' || $this->pass == ''){
+            $connection = 'http://'.$this->url.':'.$this->port;
+        }else{
+            $connection = 'http://'.$this->user.':'.$this->pass.'@'.$this->url.':'.$this->port;
+        }
+        
+        $client = EntityManager::create($connection);
         
         return $client;
     }
