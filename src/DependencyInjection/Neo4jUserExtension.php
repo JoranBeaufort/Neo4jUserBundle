@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class Neo4jUserExtension extends Extension
+class Neo4jUserbundleExtension extends Extension
 {
     /**
      * {@inheritdoc}
