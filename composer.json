@@ -1,0 +1,33 @@
+{
+    "name": "JoranBeaufort/Neo4jUserBundle",
+    "description": "User bundle for Neo4j",
+    "license": "Apache V2",
+    "keywords": [
+        "neo4j",
+        "graph",
+        "user"
+    ],
+    "homepage": "https://github.com/joranbeaufort/neo4juserbundle",
+    "authors": [
+        {
+            "name": "Manuel Bär",
+            "email": "manuel.baer@geonet.ch"
+        }
+    ],
+    "require": {
+        "doctrine/annotations": "^1.2",
+        "graphaware/neo4j-php-client": "^4.0",
+        "graphaware/neo4j-php-ogm": "^1.0.0@beta",
+        "doctrine/collections": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "JoranBeaufort\\Neo4jUserBundle": "src",
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.2",
+        "symfony/finder": "^3.0",
+        "symfony/stopwatch": "^3.0"
+    }
+}
