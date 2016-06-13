@@ -1,5 +1,5 @@
 {
-    "name": "JoranBeaufort/Neo4jUserBundle",
+    "name": "joranbeaufort/neo4juserbundle",
     "description": "User bundle for Neo4j",
     "license": "Apache V2",
     "keywords": [
