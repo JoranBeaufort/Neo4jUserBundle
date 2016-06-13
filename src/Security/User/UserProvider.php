@@ -31,10 +31,10 @@ class UserProvider implements UserProviderInterface
             if($user->isEnabled()===true){
                 return $user;
             }else{
-                throw new DisabledException(sprintf('Bitte bestätigen Sie ihre Emailadresse.', $user->getUsername()));
+                throw new DisabledException(sprintf('Please confirm your email!', $user->getUsername()));
             }
         }else{   
-            throw new UsernameNotFoundException(sprintf('Benutzername/Email "%s" wurde nicht gefunden.', $login));
+            throw new UsernameNotFoundException(sprintf('Username/Email "%s" not found', $login));
         }
     }
 
@@ -49,6 +49,6 @@ class UserProvider implements UserProviderInterface
 
     public function supportsClass($class)
     {
-        return $class === 'Neo4jUserBundle\Entity\User';
+        return $class === 'JoranBeaufort\Neo4jUserBundle\Entity\User';
     }
 }

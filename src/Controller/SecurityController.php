@@ -61,8 +61,8 @@ class SecurityController extends Controller
                 
                     $password = md5(uniqid());
                     $message = \Swift_Message::newInstance()
-                    ->setSubject('STARBORN - Passwort reset')
-                    ->setFrom('starborn@geonet.ch')
+                    ->setSubject($this->getParameter('neo4j_user.mail.subject.passwordreset'))
+                    ->setFrom($this->getParameter('mailer_user'))
                     ->setTo($user->getEmail())
                     ->setBody(
                         $this->renderView(
