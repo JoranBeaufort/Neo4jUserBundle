@@ -6,6 +6,7 @@ parameters:
 services:
     neo4j.graph_manager:
         class: %neo4j.graph_manager.class%
+        arguments: []
     neo4j.user_provider:
         class: JoranBeaufort\Neo4jUserBundle\Security\User\UserProvider
         arguments: ['@neo4j.graph_manager']

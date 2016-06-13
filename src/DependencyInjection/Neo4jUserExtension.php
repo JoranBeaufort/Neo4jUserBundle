@@ -24,5 +24,9 @@ class Neo4jUserExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+        
+        // Once the services definition are read, get your service and add a method call to setConfig()
+        $serviceDefintion = $container->getDefinition( 'neo4j.graph_manager' );
+        $serviceDefintion->addMethodCall( 'setConfig', array( $processedConfig[ 'neo4j_userbundle' ] ) );
     }
 }
