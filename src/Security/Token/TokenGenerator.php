@@ -1,8 +1,8 @@
 <?php
-namespace Neo4jUserBundle\Security\Token;
+namespace JoranBeaufort\Neo4jUserBundle\Security\Token;
 
-use Neo4jUserBundle\Manager\GraphManager;
-use Neo4jUserBundle\Entity\User;
+use JoranBeaufort\Neo4jUserBundle\Manager\GraphManager;
+use JoranBeaufort\Neo4jUserBundle\Entity\User;
 
 class TokenGenerator
 {

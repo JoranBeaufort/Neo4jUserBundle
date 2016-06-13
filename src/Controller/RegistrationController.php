@@ -1,5 +1,5 @@
 <?php
-namespace Neo4jUserBundle\Controller;
+namespace JoranBeaufort\Neo4jUserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,9 +10,9 @@ use Symfony\Component\Form\FormError;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 
-use Neo4jUserBundle\Form\UserType;
-use Neo4jUserBundle\Entity\User;
-use Neo4jUserBundle\Entity\Role;
+use JoranBeaufort\Neo4jUserBundle\Form\UserType;
+use JoranBeaufort\Neo4jUserBundle\Entity\User;
+use JoranBeaufort\Neo4jUserBundle\Entity\Role;
 
 class RegistrationController extends Controller
 {

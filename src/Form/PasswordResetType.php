@@ -1,5 +1,5 @@
 <?php
-namespace Neo4jUserBundle\Form;
+namespace JoranBeaufort\Neo4jUserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

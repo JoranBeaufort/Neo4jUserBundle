@@ -1,6 +1,6 @@
 <?php
 
-namespace Neo4jUserBundle\Entity;
+namespace JoranBeaufort\Neo4jUserBundle\Entity;
 
 use GraphAware\Neo4j\OGM\Annotations as OGM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -351,7 +351,7 @@ class User implements AdvancedUserInterface, \Serializable
     }
     
     /**
-     * @return \Doctrine\Common\Collections\ArrayCollection|\Neo4jUserBundle\Entity\Role[]
+     * @return \Doctrine\Common\Collections\ArrayCollection|\JoranBeaufort\Neo4jUserBundle\Entity\Role[]
      */
     public function getRoles()
     {
@@ -365,7 +365,7 @@ class User implements AdvancedUserInterface, \Serializable
     
     
     /**
-     * @param Neo4jUserBundle\Entity\Role $role
+     * @param JoranBeaufort\Neo4jUserBundle\Entity\Role $role
      */
     public function addRole(Role $role)
     {
@@ -375,7 +375,7 @@ class User implements AdvancedUserInterface, \Serializable
     }
 
     /**
-     * @param Neo4jUserBundle\Entity\Role $role
+     * @param JoranBeaufort\Neo4jUserBundle\Entity\Role $role
      */
     public function removeRole(Role $role)
     {
@@ -412,18 +412,5 @@ class User implements AdvancedUserInterface, \Serializable
         ) = unserialize($serialized);
     }
     
-    
-    /*
-    *
-    *
-    public function validate(ExecutionContextInterface $context)
-    {
-        if ($this->getNewPassword() != null && $this->getOldPassword() == null) {
-            $context->buildViolation('Provide your old password here!')
-                ->atPath('oldPassword')
-                ->addViolation();
-        }
-    }
-    */
     // other methods, including security methods like getRoles()
 }

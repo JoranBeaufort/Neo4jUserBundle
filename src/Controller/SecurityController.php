@@ -1,14 +1,14 @@
 <?php
 // src/AppBundle/Controller/SecurityController.php
-namespace Neo4jUserBundle\Controller;
+namespace JoranBeaufort\Neo4jUserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-use Neo4jUserBundle\Form\PasswordResetType;
-use Neo4jUserBundle\Entity\User;
+use JoranBeaufort\Neo4jUserBundle\Form\PasswordResetType;
+use JoranBeaufort\Neo4jUserBundle\Entity\User;
 
 class SecurityController extends Controller
 {

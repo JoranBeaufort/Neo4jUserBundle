@@ -1,6 +1,6 @@
 <?php
 
-namespace Neo4jUserBundle\Manager;
+namespace JoranBeaufort\Neo4jUserBundle\Manager;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use GraphAware\Neo4j\OGM\EntityManager;

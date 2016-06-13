@@ -1,5 +1,5 @@
 <?php
-namespace Neo4jUserBundle\Entity;
+namespace JoranBeaufort\Neo4jUserBundle\Entity;
 
 // Remember to create the role nodes in the neo4j graph
 // create (r:Role{roleType:'ROLE_USER'})
@@ -54,7 +54,7 @@ class Role
 
     
     /**
-     * @return \Doctrine\Common\Collections\ArrayCollection|\Neo4jUserBundle\Entity\User[]
+     * @return \Doctrine\Common\Collections\ArrayCollection|\JoranBeaufort\Neo4jUserBundle\Entity\User[]
      */
     public function getUsers()
     {
@@ -62,7 +62,7 @@ class Role
     }
 
     /**
-     * @param Neo4jUserBundle\Entity\User $user
+     * @param JoranBeaufort\Neo4jUserBundle\Entity\User $user
      */
     public function addUser(User $user)
     {
@@ -72,7 +72,7 @@ class Role
     }
 
     /**
-     * @param Neo4jUserBundle\Entity\User $user
+     * @param JoranBeaufort\Neo4jUserBundle\Entity\User $user
      */
     public function removeUser(User $user)
     {

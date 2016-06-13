@@ -1,6 +1,6 @@
 <?php
 // src/Acme/HelloBundle/Controller/HelloController.php
-namespace Neo4jUserBundle\Controller;
+namespace JoranBeaufort\Neo4jUserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 use Symfony\Component\Form\FormError;
 
-use Neo4jUserBundle\Entity\User;
-use Neo4jUserBundle\Form\UserEditType;
-use Neo4jUserBundle\Security\User\UserProvider;
+use JoranBeaufort\Neo4jUserBundle\Entity\User;
+use JoranBeaufort\Neo4jUserBundle\Form\UserEditType;
+use JoranBeaufort\Neo4jUserBundle\Security\User\UserProvider;
 
 
 

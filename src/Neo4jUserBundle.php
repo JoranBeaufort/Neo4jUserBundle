@@ -1,6 +1,6 @@
 <?php
 
-namespace Neo4jUserBundle;
+namespace JoranBeaufort\Neo4jUserBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

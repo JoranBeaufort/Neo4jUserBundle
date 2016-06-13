@@ -1,13 +1,13 @@
 <?php
-namespace Neo4jUserBundle\Security\User;
+namespace JoranBeaufort\Neo4jUserBundle\Security\User;
 
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\Exception\DisabledException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
-use Neo4jUserBundle\Manager\GraphManager;
-use Neo4jUserBundle\Entity\User;
+use JoranBeaufort\Neo4jUserBundle\Manager\GraphManager;
+use JoranBeaufort\Neo4jUserBundle\Entity\User;
 
 class UserProvider implements UserProviderInterface
 {
