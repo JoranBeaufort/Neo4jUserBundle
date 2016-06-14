@@ -22,6 +22,9 @@ class Configuration implements ConfigurationInterface
         
         $rootNode
             ->children()
+                ->scalarNode('protocol')
+                    ->defaultValue('http')
+                ->end()
                 ->scalarNode('username')
                     ->defaultValue('')
                 ->end()

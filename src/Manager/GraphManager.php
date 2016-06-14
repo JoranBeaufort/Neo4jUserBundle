@@ -8,6 +8,7 @@ use GraphAware\Neo4j\OGM\EntityManager;
 
 class GraphManager
 {
+    private $protocol;
     private $user;
     private $pass;
     private $url;
@@ -15,6 +16,7 @@ class GraphManager
 
     public function setConfig( $config )
     {
+        $this->protocol = $config['protocol'];
         $this->user = $config['username'];
         $this->pass = $config['password'];
         $this->url  = $config['url'];
@@ -24,9 +26,9 @@ class GraphManager
     public function getClient()
     {
         if($this->user=='' || $this->pass == ''){
-            $connection = 'http://'.$this->url.':'.$this->port;
+            $connection =  $this->protocol.'://'.$this->url.':'.$this->port;
         }else{
-            $connection = 'http://'.$this->user.':'.$this->pass.'@'.$this->url.':'.$this->port;
+            $connection =  $this->protocol.'://'.$this->user.':'.$this->pass.'@'.$this->url.':'.$this->port;
         }
         
         $client = EntityManager::create($connection);
