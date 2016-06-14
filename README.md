@@ -30,7 +30,8 @@ neo4j_user:
     username: neo4j
     password: neo4j
     url: localhost
-    port: 7474
+    port: 7474       # Carefull, for bolt change to: 7687
+    protocol: bolt   # Default: http
 ```
 
 Add following to your `/app/config/parameters.yml` and change as desired:
